@@ -1,0 +1,21 @@
+{
+  "name": "videoly",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "author": "b0rey",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {}
+}

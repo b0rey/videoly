@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  pg:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD
+
+  node:
+    image: node
+    restart: always
+    command: sleep 99999
+    volumes:
+      - ./node:/src
+    environment:
+      - DEBUG=*
+      - PGHOST=pg
+      - PGUSER=postgres
+      - PGDATABASE=node
+      - PGPASSWORD=${POSTGRES_PASSWORD}
+      - PGPORT=5432
