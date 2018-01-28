@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint .",
+    "populate": "DEBUG=* node populate",
+    "sql": "DEBUG=* node sql"
   },
   "author": "b0rey",
   "license": "BSD-2-Clause",
@@ -17,5 +19,11 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "debug": "^3.1.0",
+    "moment": "^2.20.1",
+    "pg-copy-streams": "^1.2.0",
+    "pgtools": "^0.3.0",
+    "urijs": "^1.19.0"
+  }
 }

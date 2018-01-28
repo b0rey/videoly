@@ -15,7 +15,6 @@ services:
     volumes:
       - ./node:/src
     environment:
-      - DEBUG=*
       - PGHOST=pg
       - PGUSER=postgres
       - PGDATABASE=node
