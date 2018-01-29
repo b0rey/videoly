@@ -18,7 +18,7 @@ module.exports = class RowReadable extends Readable {
   rowPageviews ({ timeRange, browsers, schemas, hosts, counters }) {
     const timestamp = gen.timerange(timeRange)
     const time = new Date(timestamp).toISOString()
-    const browser = _.sample(gen.browsers)
+    const browser = _.sample(limit.browsers)
     const url = gen.url({ schemas, hosts })
 
     if (Math.random() >= 0.5) {
