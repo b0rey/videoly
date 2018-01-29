@@ -10,8 +10,8 @@ services:
 
   node:
     image: node
-    restart: always
-    command: sleep 99999
+    #command: sleep 99999
+    command: sh -c 'cd /src; npm i; npm run populate; npm run sql'
     volumes:
       - ./node:/src
     environment:

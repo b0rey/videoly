@@ -54,5 +54,16 @@ module.exports = {
   maxClickShift: `
     SELECT MAX(local_time - time)
     FROM atc_clicks, pageviews
-    WHERE pageviews.id = impression_id`
+    WHERE pageviews.id = impression_id`,
+  conversion: `
+    SELECT COUNT(*)
+    FROM (
+      SELECT date_trunc('day', local_time) AS "day", product_id, visitor_id, COUNT(*)
+      FROM atc_clicks INNER JOIN pageviews
+        ON atc_clicks.impression_id = pageviews.id
+        AND pageviews.url LIKE '%shop1.com%'
+      WHERE local_time BETWEEN '2017-07-01' AND '2017-08-01'
+      GROUP BY 1, 2, 3
+      ORDER BY 1
+    ) t`
 }
